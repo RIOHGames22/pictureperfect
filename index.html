@@ -280,7 +280,7 @@
     // }, 1);
   </script>
   <div id="unity-container" class="unity-desktop">
-    <canvas id="unity-canvas" width=1920 height=1080></canvas>
+    <canvas id="unity-canvas" width=960 height=600></canvas>
     <div id="unity-loading-bar">
       <div id="unity-logo"></div>
       <div id="unity-progress-bar-empty">
@@ -327,11 +327,11 @@
     }
 
     var buildUrl = "Build";
-    var loaderUrl = buildUrl + "/nocomp2.loader.js";
+    var loaderUrl = buildUrl + "/nocomp3.loader.js";
     var config = {
-      dataUrl: buildUrl + "/nocomp2.data",
-      frameworkUrl: buildUrl + "/nocomp2.framework.js",
-      codeUrl: buildUrl + "/nocomp2.wasm",
+      dataUrl: buildUrl + "/nocomp3.data",
+      frameworkUrl: buildUrl + "/nocomp3.framework.js",
+      codeUrl: buildUrl + "/nocomp3.wasm",
       streamingAssetsUrl: "StreamingAssets",
       companyName: "DefaultCompany",
       productName: "OH Games Jigsaw",
@@ -353,8 +353,8 @@
       config.devicePixelRatio = 1;
       unityShowBanner('WebGL builds are not supported on mobile devices.');
     } else {
-      canvas.style.width = "1920px";
-      canvas.style.height = "1080px";
+      canvas.style.width = "960px";
+      canvas.style.height = "600px";
     }
     loadingBar.style.display = "block";
 
@@ -367,12 +367,12 @@
         sessionStorage.setItem('fullscreen', "no");
         Swal.fire(
           'Strap in!',
-          'Exit fullscreen with F11 and click "Return" to leave.',
+          'Depending on your screen size, you may have to zoom out (ctrl -) to view the game properly. Exit fullscreen with F11 and click "Return" to leave.',
           'info'
         ).then(res => {
           // if (sweed) {
-            unityInstance.SetFullscreen(1);
-            sessionStorage.setItem('fullscreen', "yes");
+          unityInstance.SetFullscreen(1);
+          sessionStorage.setItem('fullscreen', "yes");
           // } else {
           //   swee.then(res => {
           //     unityInstance.SetFullscreen(1);
